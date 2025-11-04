@@ -7,7 +7,6 @@ for (let i = 0; i < 16; i++) {
         const square = document.createElement("div");
         square.style.width = "100px";
         square.style.height = "100px";
-        //square.style.border = "1px solid black";
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = "green";
         });

@@ -20,6 +20,13 @@ for (let i = 0; i < 16; i++) {
     container.appendChild(row);
 };
 
+function randomColor() {
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
 function createGrid(sqr) {
     const perc = 600 / sqr;
     for (let i = 0; i < sqr; i++) {
@@ -30,7 +37,8 @@ function createGrid(sqr) {
         const square = document.createElement("div");
         square.style.width = `${perc}%`;
         square.addEventListener("mouseenter", () => {
-            square.classList.add("green-background");
+            square.style.backgroundColor = randomColor();
+            //square.classList.add("green-background");
         });
         square.addEventListener("mouseleave", () => {
             square.classList.remove("green-background");

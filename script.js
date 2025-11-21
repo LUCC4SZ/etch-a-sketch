@@ -21,9 +21,9 @@ for (let i = 0; i < 16; i++) {
 };
 
 function randomColor() {
-    const red = Math.floor(Math.random() * 255);
-    const green = Math.floor(Math.random() * 255);
-    const blue = Math.floor(Math.random() * 255);
+    const red = Math.floor((Math.random() * 255) + 1);
+    const green = Math.floor((Math.random() * 255) + 1);
+    const blue = Math.floor((Math.random() * 255) + 1);
     return `rgb(${red}, ${green}, ${blue})`;
 }
 
@@ -38,10 +38,9 @@ function createGrid(sqr) {
         square.style.width = `${perc}%`;
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = randomColor();
-            //square.classList.add("green-background");
         });
         square.addEventListener("mouseleave", () => {
-            square.classList.remove("green-background");
+            /* Puede que aca tenga que hacer algo para generar el efecto de opacidad */
         });
         row.appendChild(square);
     }
